@@ -1,0 +1,27 @@
+<div class="container">
+
+  <div class="jumbotron">
+    <h2>News List</h2>
+    <div class="jumbotron">
+      <label>Search: </label>
+      <input #box (keyup.enter)="onEnter(box.value)" #filterName name="filterName">
+    </div>
+
+    <table class="table table-hover" *ngIf="newses" >
+      <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Content</th>
+        <th scope="col">Link</th>
+      </tr>
+      </thead>
+      <thead>
+      <tr *ngFor="let newss of newses" >
+        <th scope="col">{{ newss.name  }}</th>
+        <th scope="col">{{ newss.content }}</th>
+        <th><a href="{{newss.url}}">Link to Article</a></th>
+      </tr>
+      </thead>
+    </table>
+  </div>
+</div>
